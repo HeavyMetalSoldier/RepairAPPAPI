@@ -3,9 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using RepairAPPAPI.Data.Logic;
-using System.Data;
-using System.Linq;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace RepairAPPAPI
 {
