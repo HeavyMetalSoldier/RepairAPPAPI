@@ -153,7 +153,7 @@ namespace RepairAPPAPI
         private async void UpdateOrders()
         {
             var ID = Convert.ToInt32(Order_textBox_ID.Text);
-            var ClientID = Convert.ToInt32(Order_textBox_ClientID.Text);
+            var ClientID = Convert.ToInt32(Order_textBox_ClientName.Text);
             var ServiceName = Order_textBox_ServiceName.Text;
             var Descript = Order_textBox_Descript.Text;
             var OrderDate = Convert.ToDateTime(Order_textBox_OrderDate.Text);
@@ -298,7 +298,7 @@ namespace RepairAPPAPI
         private void Order_button_Clear_Click(object sender, EventArgs e)
         {
             Order_textBox_ID.Text = "";
-            Order_textBox_ClientID.Text = "";
+            Order_textBox_ClientName.Text = "";
             Order_textBox_ServiceName.Text = "";
             Order_textBox_Descript.Text = "";
             Order_textBox_OrderDate.Text = "";
@@ -329,14 +329,17 @@ namespace RepairAPPAPI
         }
 
         //Нажатие по ячейке
-        private void Orders_dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        private async void Orders_dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             SelectedRow = e.RowIndex;
+            DataGridViewRow row = Orders_dataGridView.Rows[SelectedRow];
+            int clientID = Convert.ToInt32(row.Cells[1].Value.ToString());
+            ClientLogic CL = new ClientLogic();
+            var item = await CL.Get(clientID);
             if (e.RowIndex >= 0)
             {
-                DataGridViewRow row = Orders_dataGridView.Rows[SelectedRow];
                 Order_textBox_ID.Text = row.Cells[0].Value.ToString();
-                Order_textBox_ClientID.Text = row.Cells[1].Value.ToString();
+                Order_textBox_ClientName.Text = item.FullName;
                 Order_textBox_ServiceName.Text = row.Cells[2].Value.ToString();
                 Order_textBox_Descript.Text = row.Cells[3].Value.ToString();
                 Order_textBox_OrderDate.Text = row.Cells[4].Value.ToString();

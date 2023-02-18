@@ -38,12 +38,12 @@ namespace RepairAPPAPI
             this.Order_button_Refresh = new System.Windows.Forms.Button();
             this.Order_button_Clear = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Order_textBox_Execution = new System.Windows.Forms.MaskedTextBox();
             this.Order_textBox_Progress = new System.Windows.Forms.TextBox();
-            this.Order_textBox_Execution = new System.Windows.Forms.TextBox();
             this.Order_textBox_OrderDate = new System.Windows.Forms.TextBox();
             this.Order_textBox_Descript = new System.Windows.Forms.TextBox();
             this.Order_textBox_ServiceName = new System.Windows.Forms.TextBox();
-            this.Order_textBox_ClientID = new System.Windows.Forms.TextBox();
+            this.Order_textBox_ClientName = new System.Windows.Forms.TextBox();
             this.Order_textBox_ID = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -70,7 +70,6 @@ namespace RepairAPPAPI
             this.Client_button_Refresh = new System.Windows.Forms.Button();
             this.Client_button_Clear = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.Client_textBox_Telephone = new System.Windows.Forms.TextBox();
             this.Client_textBox_Adress = new System.Windows.Forms.TextBox();
             this.Client_textBox_FullName = new System.Windows.Forms.TextBox();
             this.Client_textBox_ID = new System.Windows.Forms.TextBox();
@@ -137,6 +136,7 @@ namespace RepairAPPAPI
             this.DocDateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DocModCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button_Exit = new System.Windows.Forms.Button();
+            this.Client_textBox_Telephone = new System.Windows.Forms.MaskedTextBox();
             this.tabControl1.SuspendLayout();
             this.tabPageOrders.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -248,12 +248,12 @@ namespace RepairAPPAPI
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(236)))), ((int)(((byte)(133)))));
-            this.panel1.Controls.Add(this.Order_textBox_Progress);
             this.panel1.Controls.Add(this.Order_textBox_Execution);
+            this.panel1.Controls.Add(this.Order_textBox_Progress);
             this.panel1.Controls.Add(this.Order_textBox_OrderDate);
             this.panel1.Controls.Add(this.Order_textBox_Descript);
             this.panel1.Controls.Add(this.Order_textBox_ServiceName);
-            this.panel1.Controls.Add(this.Order_textBox_ClientID);
+            this.panel1.Controls.Add(this.Order_textBox_ClientName);
             this.panel1.Controls.Add(this.Order_textBox_ID);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label8);
@@ -267,6 +267,16 @@ namespace RepairAPPAPI
             this.panel1.Size = new System.Drawing.Size(638, 234);
             this.panel1.TabIndex = 4;
             // 
+            // Order_textBox_Execution
+            // 
+            this.Order_textBox_Execution.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Order_textBox_Execution.Location = new System.Drawing.Point(211, 166);
+            this.Order_textBox_Execution.Mask = "00/00/0000";
+            this.Order_textBox_Execution.Name = "Order_textBox_Execution";
+            this.Order_textBox_Execution.Size = new System.Drawing.Size(413, 24);
+            this.Order_textBox_Execution.TabIndex = 7;
+            this.Order_textBox_Execution.ValidatingType = typeof(System.DateTime);
+            // 
             // Order_textBox_Progress
             // 
             this.Order_textBox_Progress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -274,14 +284,6 @@ namespace RepairAPPAPI
             this.Order_textBox_Progress.Name = "Order_textBox_Progress";
             this.Order_textBox_Progress.Size = new System.Drawing.Size(413, 24);
             this.Order_textBox_Progress.TabIndex = 6;
-            // 
-            // Order_textBox_Execution
-            // 
-            this.Order_textBox_Execution.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Order_textBox_Execution.Location = new System.Drawing.Point(211, 165);
-            this.Order_textBox_Execution.Name = "Order_textBox_Execution";
-            this.Order_textBox_Execution.Size = new System.Drawing.Size(413, 24);
-            this.Order_textBox_Execution.TabIndex = 5;
             // 
             // Order_textBox_OrderDate
             // 
@@ -308,13 +310,14 @@ namespace RepairAPPAPI
             this.Order_textBox_ServiceName.Size = new System.Drawing.Size(413, 24);
             this.Order_textBox_ServiceName.TabIndex = 2;
             // 
-            // Order_textBox_ClientID
+            // Order_textBox_ClientName
             // 
-            this.Order_textBox_ClientID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Order_textBox_ClientID.Location = new System.Drawing.Point(211, 53);
-            this.Order_textBox_ClientID.Name = "Order_textBox_ClientID";
-            this.Order_textBox_ClientID.Size = new System.Drawing.Size(413, 24);
-            this.Order_textBox_ClientID.TabIndex = 1;
+            this.Order_textBox_ClientName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Order_textBox_ClientName.Location = new System.Drawing.Point(211, 53);
+            this.Order_textBox_ClientName.Name = "Order_textBox_ClientName";
+            this.Order_textBox_ClientName.ReadOnly = true;
+            this.Order_textBox_ClientName.Size = new System.Drawing.Size(413, 24);
+            this.Order_textBox_ClientName.TabIndex = 1;
             // 
             // Order_textBox_ID
             // 
@@ -379,11 +382,11 @@ namespace RepairAPPAPI
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(76, 53);
+            this.label4.Location = new System.Drawing.Point(52, 54);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(110, 20);
+            this.label4.Size = new System.Drawing.Size(134, 20);
             this.label4.TabIndex = 1;
-            this.label4.Text = "ID клиента";
+            this.label4.Text = "ФИО клиента";
             // 
             // label3
             // 
@@ -596,14 +599,6 @@ namespace RepairAPPAPI
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(638, 234);
             this.panel2.TabIndex = 11;
-            // 
-            // Client_textBox_Telephone
-            // 
-            this.Client_textBox_Telephone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Client_textBox_Telephone.Location = new System.Drawing.Point(211, 137);
-            this.Client_textBox_Telephone.Name = "Client_textBox_Telephone";
-            this.Client_textBox_Telephone.Size = new System.Drawing.Size(413, 24);
-            this.Client_textBox_Telephone.TabIndex = 4;
             // 
             // Client_textBox_Adress
             // 
@@ -1091,6 +1086,7 @@ namespace RepairAPPAPI
             this.Document_textBox_OrderID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Document_textBox_OrderID.Location = new System.Drawing.Point(211, 109);
             this.Document_textBox_OrderID.Name = "Document_textBox_OrderID";
+            this.Document_textBox_OrderID.ReadOnly = true;
             this.Document_textBox_OrderID.Size = new System.Drawing.Size(413, 24);
             this.Document_textBox_OrderID.TabIndex = 3;
             // 
@@ -1099,6 +1095,7 @@ namespace RepairAPPAPI
             this.Document_textBox_ClientName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Document_textBox_ClientName.Location = new System.Drawing.Point(211, 81);
             this.Document_textBox_ClientName.Name = "Document_textBox_ClientName";
+            this.Document_textBox_ClientName.ReadOnly = true;
             this.Document_textBox_ClientName.Size = new System.Drawing.Size(413, 24);
             this.Document_textBox_ClientName.TabIndex = 2;
             // 
@@ -1107,6 +1104,7 @@ namespace RepairAPPAPI
             this.Document_textBox_ClientID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Document_textBox_ClientID.Location = new System.Drawing.Point(211, 53);
             this.Document_textBox_ClientID.Name = "Document_textBox_ClientID";
+            this.Document_textBox_ClientID.ReadOnly = true;
             this.Document_textBox_ClientID.Size = new System.Drawing.Size(413, 24);
             this.Document_textBox_ClientID.TabIndex = 1;
             // 
@@ -1298,6 +1296,15 @@ namespace RepairAPPAPI
             this.button_Exit.UseVisualStyleBackColor = false;
             this.button_Exit.Click += new System.EventHandler(this.button_Exit_Click);
             // 
+            // Client_textBox_Telephone
+            // 
+            this.Client_textBox_Telephone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Client_textBox_Telephone.Location = new System.Drawing.Point(211, 138);
+            this.Client_textBox_Telephone.Mask = "+7(999) 000-0000";
+            this.Client_textBox_Telephone.Name = "Client_textBox_Telephone";
+            this.Client_textBox_Telephone.Size = new System.Drawing.Size(413, 24);
+            this.Client_textBox_Telephone.TabIndex = 5;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -1356,10 +1363,9 @@ namespace RepairAPPAPI
         private TextBox Order_textBox_ID;
         private TextBox Order_textBox_Descript;
         private TextBox Order_textBox_ServiceName;
-        private TextBox Order_textBox_ClientID;
+        private TextBox Order_textBox_ClientName;
         private TextBox Order_textBox_OrderDate;
         private TextBox Order_textBox_Progress;
-        private TextBox Order_textBox_Execution;
         private Button Order_button_Refresh;
         private Button Order_button_Clear;
         private Button Order_button_Alter;
@@ -1371,7 +1377,6 @@ namespace RepairAPPAPI
         private Button Client_button_Refresh;
         private Button Client_button_Clear;
         private Panel panel2;
-        private TextBox Client_textBox_Telephone;
         private TextBox Client_textBox_Adress;
         private TextBox Client_textBox_FullName;
         private TextBox Client_textBox_ID;
@@ -1442,5 +1447,7 @@ namespace RepairAPPAPI
         private DataGridViewTextBoxColumn OrdersOrderDateCol;
         private DataGridViewTextBoxColumn OrdersExecutionCol;
         private DataGridViewTextBoxColumn OrdersProgressCol;
+        private MaskedTextBox Order_textBox_Execution;
+        private MaskedTextBox Client_textBox_Telephone;
     }
 }
