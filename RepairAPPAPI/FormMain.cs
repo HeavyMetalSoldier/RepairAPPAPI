@@ -9,7 +9,7 @@ namespace RepairAPPAPI
     public partial class FormMain : Form
     {
         int SelectedRow;
-
+        string[] ProgressList = { "В процессе", "Выполнено" };
         public FormMain()
         {
             InitializeComponent();
@@ -21,6 +21,8 @@ namespace RepairAPPAPI
             GetClients();
             GetServs();
             GetDocuments();
+            Order_textBox_Progress.Items.AddRange(ProgressList);
+            GetServsInOrders();
         }
         private void button_Exit_Click(object sender, EventArgs e)
         {
@@ -81,6 +83,15 @@ namespace RepairAPPAPI
                 Serv_dataGridView.Columns[1].DataPropertyName = "Price";
                 Serv_dataGridView.Columns[2].DataPropertyName = "ID";
                 Serv_dataGridView.DataSource = list;
+            }
+        }
+        private async void GetServsInOrders()
+        {
+            ServLogic SL = new ServLogic();
+            IEnumerable<ServModel> list = await SL.GetAll();
+            foreach (var obj in list)
+            {
+                Order_textBox_ServiceName.Items.Add(obj.ServiceName);
             }
         }
         private async void GetDocuments()
@@ -335,11 +346,11 @@ namespace RepairAPPAPI
             DataGridViewRow row = Orders_dataGridView.Rows[SelectedRow];
             int clientID = Convert.ToInt32(row.Cells[1].Value.ToString());
             ClientLogic CL = new ClientLogic();
-            var item = await CL.Get(clientID);
+            var ClientItem = await CL.Get(clientID);
             if (e.RowIndex >= 0)
             {
                 Order_textBox_ID.Text = row.Cells[0].Value.ToString();
-                Order_textBox_ClientName.Text = item.FullName;
+                Order_textBox_ClientName.Text = ClientItem.FullName;
                 Order_textBox_ServiceName.Text = row.Cells[2].Value.ToString();
                 Order_textBox_Descript.Text = row.Cells[3].Value.ToString();
                 Order_textBox_OrderDate.Text = row.Cells[4].Value.ToString();

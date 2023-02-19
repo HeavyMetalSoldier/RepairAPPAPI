@@ -51,7 +51,7 @@
             this.button_Save.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_Save.Name = "button_Save";
             this.button_Save.Size = new System.Drawing.Size(156, 40);
-            this.button_Save.TabIndex = 38;
+            this.button_Save.TabIndex = 5;
             this.button_Save.Text = "Сохранить";
             this.button_Save.UseVisualStyleBackColor = false;
             this.button_Save.Click += new System.EventHandler(this.button_Save_Click);
@@ -64,7 +64,7 @@
             this.button_Clear.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_Clear.Name = "button_Clear";
             this.button_Clear.Size = new System.Drawing.Size(124, 40);
-            this.button_Clear.TabIndex = 37;
+            this.button_Clear.TabIndex = 6;
             this.button_Clear.Text = "Очистить";
             this.button_Clear.UseVisualStyleBackColor = false;
             this.button_Clear.Click += new System.EventHandler(this.button_Clear_Click);
@@ -136,7 +136,7 @@
             this.textBox_Description.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox_Description.Name = "textBox_Description";
             this.textBox_Description.Size = new System.Drawing.Size(236, 27);
-            this.textBox_Description.TabIndex = 28;
+            this.textBox_Description.TabIndex = 2;
             // 
             // textBox_Execution
             // 
@@ -145,7 +145,7 @@
             this.textBox_Execution.Mask = "00/00/0000";
             this.textBox_Execution.Name = "textBox_Execution";
             this.textBox_Execution.Size = new System.Drawing.Size(236, 30);
-            this.textBox_Execution.TabIndex = 39;
+            this.textBox_Execution.TabIndex = 3;
             this.textBox_Execution.ValidatingType = typeof(System.DateTime);
             // 
             // textBox_ClientName
@@ -155,7 +155,7 @@
             this.textBox_ClientName.Location = new System.Drawing.Point(219, 77);
             this.textBox_ClientName.Name = "textBox_ClientName";
             this.textBox_ClientName.Size = new System.Drawing.Size(236, 31);
-            this.textBox_ClientName.TabIndex = 43;
+            this.textBox_ClientName.TabIndex = 0;
             this.textBox_ClientName.SelectedIndexChanged += new System.EventHandler(this.textBox_ClientID_SelectedIndexChanged);
             // 
             // textBox_ServiceName
@@ -165,7 +165,7 @@
             this.textBox_ServiceName.Location = new System.Drawing.Point(219, 119);
             this.textBox_ServiceName.Name = "textBox_ServiceName";
             this.textBox_ServiceName.Size = new System.Drawing.Size(236, 31);
-            this.textBox_ServiceName.TabIndex = 44;
+            this.textBox_ServiceName.TabIndex = 1;
             // 
             // textBox_Progress
             // 
@@ -174,7 +174,7 @@
             this.textBox_Progress.Location = new System.Drawing.Point(219, 243);
             this.textBox_Progress.Name = "textBox_Progress";
             this.textBox_Progress.Size = new System.Drawing.Size(236, 31);
-            this.textBox_Progress.TabIndex = 45;
+            this.textBox_Progress.TabIndex = 4;
             // 
             // Orders
             // 
